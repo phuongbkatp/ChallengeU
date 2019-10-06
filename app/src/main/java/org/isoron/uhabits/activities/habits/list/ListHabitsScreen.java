@@ -224,6 +224,12 @@ public class ListHabitsScreen extends BaseScreen
 
     public void showCreateHabitScreen()
     {
+        Intent intent = intentFactory.startTemplateHabitActivity(activity);
+        activity.startActivity(intent);
+    }
+
+    public void showCreateSimpleHabitScreen()
+    {
         activity.showDialog(createHabitDialogFactory.create(), "editHabit");
     }
 

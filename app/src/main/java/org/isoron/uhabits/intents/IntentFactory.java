@@ -26,6 +26,7 @@ import android.support.annotation.*;
 import org.isoron.uhabits.*;
 import org.isoron.uhabits.activities.about.*;
 import org.isoron.uhabits.activities.habits.show.*;
+import org.isoron.uhabits.activities.habits.template.TemplateHabitActivity;
 import org.isoron.uhabits.activities.intro.*;
 import org.isoron.uhabits.activities.settings.*;
 import org.isoron.uhabits.models.*;
@@ -70,6 +71,11 @@ public class IntentFactory
     public Intent startSettingsActivity(Context context)
     {
         return new Intent(context, SettingsActivity.class);
+    }
+
+    public Intent startTemplateHabitActivity(Context context)
+    {
+        return new Intent(context, TemplateHabitActivity.class);
     }
 
     public Intent startShowHabitActivity(Context context, Habit habit)

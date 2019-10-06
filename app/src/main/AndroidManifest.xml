@@ -67,6 +67,15 @@
         </activity-alias>
 
         <activity
+            android:name=".activities.habits.template.TemplateHabitActivity"
+            android:label="@string/main_activity_title">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.habits.list.ListHabitsActivity"/>
+        </activity>
+
+
+        <activity
             android:name=".activities.habits.show.ShowHabitActivity"
             android:label="@string/title_activity_show_habit">
             <meta-data

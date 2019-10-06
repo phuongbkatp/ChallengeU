@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ideas_list">
+        <item>WORKOUT</item>
+        <item>DO YOGA</item>
+        <item>SAY NO FOR FAST FOOD</item>
+        <item>WALK 15 MIN</item>
+        <item>STRETCH</item>
+        <item>WAKE UP EARLY</item>
+        <item>PRACTICE PLAY MUSICAL INSTRUMENT</item>
+        <item>DRAW SOMETHING</item>
+        <item>WRITE POEM</item>
+        <item>READ A BOOK</item>
+        <item>DO HOMEWORK</item>
+        <item>DO SOME MATH EXERCISES</item>
+        <item>MEDITATE</item>
+        <item>PRAY</item>
+    </string-array>
+</resources>
