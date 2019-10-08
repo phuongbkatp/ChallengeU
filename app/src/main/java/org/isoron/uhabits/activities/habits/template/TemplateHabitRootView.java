@@ -37,7 +37,7 @@ public class TemplateHabitRootView extends BaseRootView {
 
     @OnClick(R.id.early_morning_walks)
     public void onEarlyMorningWalk(LinearLayout linearLayout) {
-        showCreateHabitWithTemplateScreen();
+        showCreateEarlyMorningWalkScreen();
     }
 
     @Inject
@@ -63,8 +63,8 @@ public class TemplateHabitRootView extends BaseRootView {
     {
         activity.showDialog(createHabitDialogFactory.create(), "editHabit");
     }
-    public void showCreateHabitWithTemplateScreen()
+    public void showCreateEarlyMorningWalkScreen()
     {
-        activity.showDialog(createHabitWithTemplateDialogFactory.create(), "templateHabit");
+        activity.showDialog(createHabitWithTemplateDialogFactory.create("Early morning walk", "Do you get up early today?"), "templateHabit");
     }
 }

@@ -14,13 +14,13 @@ public class CreateHabitWithTemplateDialogFactory {
 
     }
 
-    public CreateHabitWithTemplateDialog create()
+    public CreateHabitWithTemplateDialog create(String name, String description)
     {
 
         CreateHabitWithTemplateDialog dialog = new CreateHabitWithTemplateDialog();
         Bundle args = new Bundle();
-        args.putString("name", "Early morning walks");
-        args.putLong("habitId", 12L);
+        args.putString("name", name);
+        args.putString("description", description);
         dialog.setArguments(args);
         return dialog;
     }

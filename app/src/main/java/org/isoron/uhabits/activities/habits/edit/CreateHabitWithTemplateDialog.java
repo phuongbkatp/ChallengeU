@@ -17,9 +17,11 @@ public class CreateHabitWithTemplateDialog extends BaseDialog {
     protected void initializeHabits()
     {
         String name = (String) getArguments().getString("name");
+        String description = (String) getArguments().getString("description");
         modifiedHabit = modelFactory.buildHabit();
         modifiedHabit.setFrequency(Frequency.DAILY);
         modifiedHabit.setName(name);
+        modifiedHabit.setDescription(description);
         modifiedHabit.setColor(
                 prefs.getDefaultHabitColor(modifiedHabit.getColor()));
     }
