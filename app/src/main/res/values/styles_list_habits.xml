@@ -45,10 +45,19 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:breakStrategy">balanced</item>
         <item name="android:maxLines">2</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:ellipsize">end</item>
         <item name="android:scrollHorizontally">true</item>
     </style>
-
+    <style name="ListHabits.LabelSubText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:breakStrategy">balanced</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
     <style name="ListHabits.CheckmarkPanel">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

@@ -62,6 +62,9 @@ public class HabitCardView extends FrameLayout
     @BindView(R.id.label)
     TextView label;
 
+    @BindView(R.id.habit_icon)
+    ImageView habitIcon;
+
     @BindView(R.id.scoreRing)
     RingView scoreRing;
 
@@ -223,6 +226,7 @@ public class HabitCardView extends FrameLayout
         int color = getActiveColor(habit);
         label.setText(habit.getName());
         label.setTextColor(color);
+        habitIcon.setBackgroundDrawable(habit.getHabitIcon());
         scoreRing.setColor(color);
         checkmarkPanel.setColor(color);
         postInvalidate();

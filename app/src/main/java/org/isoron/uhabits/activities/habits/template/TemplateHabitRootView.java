@@ -65,6 +65,6 @@ public class TemplateHabitRootView extends BaseRootView {
     }
     public void showCreateEarlyMorningWalkScreen()
     {
-        activity.showDialog(createHabitWithTemplateDialogFactory.create("Early morning walk", "Do you get up early today?"), "templateHabit");
+        activity.showDialog(createHabitWithTemplateDialogFactory.create("Early morning walk", "Do you get up early today?", R.drawable.target), "templateHabit");
     }
 }

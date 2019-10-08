@@ -19,6 +19,7 @@
 
 package org.isoron.uhabits.models;
 
+import android.graphics.drawable.Drawable;
 import android.net.*;
 import android.support.annotation.*;
 
@@ -44,6 +45,9 @@ public class Habit
 
     @NonNull
     private String description;
+
+    @NonNull
+    private Drawable habitIcon;
 
     @NonNull
     private Frequency frequency;
@@ -108,6 +112,7 @@ public class Habit
     {
         this.name = model.getName();
         this.description = model.getDescription();
+        this.habitIcon = model.getHabitIcon();
         this.color = model.getColor();
         this.archived = model.isArchived();
         this.frequency = model.frequency;
@@ -174,6 +179,15 @@ public class Habit
     public void setId(@Nullable Long id)
     {
         this.id = id;
+    }
+
+    @NonNull
+    public Drawable getHabitIcon() {
+        return habitIcon;
+    }
+
+    public void setHabitIcon(@NonNull Drawable habitIcon) {
+        this.habitIcon = habitIcon;
     }
 
     @NonNull
@@ -267,11 +281,12 @@ public class Habit
     public String toString()
     {
         return new ToStringBuilder(this)
-            .append("id", id)
-            .append("name", name)
-            .append("description", description)
-            .append("color", color)
-            .append("archived", archived)
-            .toString();
+                .append("id", id)
+                .append("name", name)
+                .append("description", description)
+                .append("icon", habitIcon)
+                .append("color", color)
+                .append("archived", archived)
+                .toString();
     }
 }

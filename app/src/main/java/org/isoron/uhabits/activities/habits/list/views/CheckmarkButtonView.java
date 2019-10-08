@@ -108,7 +108,8 @@ public class CheckmarkButtonView extends View
 
         rect.set(0, 0, getWidth(), getHeight());
         rect.offset(0, 0.4f * em);
-        canvas.drawText(label, rect.centerX(), rect.centerY(), paint);
+        //canvas.drawText(label, rect.centerX(), rect.centerY(), paint);
+        canvas.drawCircle(rect.centerX(), rect.centerY() - 25/2, 25, paint);
     }
 
     @Override

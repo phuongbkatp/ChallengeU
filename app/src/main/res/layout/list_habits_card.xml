@@ -27,20 +27,52 @@
     <LinearLayout
         android:id="@+id/innerFrame"
         style="@style/ListHabits.HabitCard"
+        android:layout_height="150dp"
         android:layout_width="match_parent">
 
-        <org.isoron.uhabits.activities.common.views.RingView
-            android:id="@+id/scoreRing"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="0dp"
-            habit:thickness="3"/>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/label"
-            style="@style/ListHabits.Label"/>
+            <LinearLayout
+                android:id="@+id/icon_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/habit_icon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="10dp" />
+
+                <TextView
+                    android:id="@+id/label"
+                    style="@style/ListHabits.Label" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/sub_label"
+                style="@style/ListHabits.LabelSubText"
+                android:layout_below="@id/icon_label"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:text="Sep 15 to Oct 18" />
+
+            <org.isoron.uhabits.activities.common.views.RingView
+                android:id="@+id/scoreRing"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/sub_label"
+                android:layout_centerHorizontal="true"
+                habit:thickness="10" />
+        </RelativeLayout>
+
 
         <org.isoron.uhabits.activities.habits.list.views.CheckmarkPanelView
             android:id="@+id/checkmarkPanel"
