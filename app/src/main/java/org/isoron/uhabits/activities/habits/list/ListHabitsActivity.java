@@ -75,7 +75,7 @@ public class ListHabitsActivity extends BaseActivity
         prefs = app.getComponent().getPreferences();
         pureBlack = prefs.isPureBlackEnabled();
 
-        screen.setMenu(menu);
+        //screen.setMenu(menu);
         screen.setController(controller);
         screen.setSelectionMenu(selectionMenu);
         rootView.setController(controller, selectionMenu);

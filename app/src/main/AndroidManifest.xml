@@ -52,7 +52,6 @@
         <activity
             android:name=".activities.habits.list.ListHabitsActivity"
             android:exported="true"
-            android:label="@string/main_activity_title"
             android:launchMode="singleTop"/>
 
         <activity-alias

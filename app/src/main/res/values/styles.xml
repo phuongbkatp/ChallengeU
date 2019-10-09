@@ -30,12 +30,12 @@
         <item name="selectedBackground">@drawable/selected_box_light</item>
         <item name="cardBackground">@drawable/card_light_background</item>
 
-        <item name="colorPrimary">@color/blue_grey_800</item>
-        <item name="colorPrimaryDark">@color/blue_grey_900</item>
+        <item name="colorPrimary">@color/circle_background</item>
+        <item name="colorPrimaryDark">@color/circle_background</item>
         <item name="colorAccent">?aboutScreenColor</item>
         <item name="cardBackgroundColor">@color/grey_50</item>
-        <item name="windowBackgroundColor">@color/grey_200</item>
-        <item name="headerBackgroundColor">@color/grey_200</item>
+        <item name="windowBackgroundColor">@color/circle_background</item>
+        <item name="headerBackgroundColor">@color/circle_background</item>
         <item name="highlightedBackgroundColor">@color/grey_100</item>
 
         <item name="android:textColor">@color/grey_800</item>
@@ -47,7 +47,7 @@
         <item name="lowContrastReverseTextColor">@color/grey_700</item>
 
         <item name="highContrastTextColor">@color/grey_800</item>
-        <item name="mediumContrastTextColor">@color/grey_500</item>
+        <item name="mediumContrastTextColor">@color/green_400</item>
         <item name="lowContrastTextColor">@color/grey_300</item>
 
         <item name="iconAdd">@drawable/ic_action_add_dark</item>
@@ -60,7 +60,7 @@
         <item name="iconFrequency">@drawable/ic_repeat_black</item>
         <item name="iconReminder">@drawable/ic_alarm_black</item>
         <item name="dialogIconChangeColor">@drawable/ic_action_color_light</item>
-        <item name="toolbarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="toolbarPopupTheme">@style/ThemeOverlay.AppCompat.ActionBar</item>
 
         <item name="aboutScreenColor">@color/blue_800</item>
         <item name="widgetShadowAlpha">0.25</item>
@@ -237,8 +237,8 @@
 
     <style name="Toolbar">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">?actionBarSize</item>
-        <item name="android:background">?colorPrimary</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:background">@color/circle_background</item>
         <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
     </style>
 

@@ -22,6 +22,8 @@ package org.isoron.uhabits.activities.habits.list;
 import android.content.*;
 import android.content.res.*;
 import android.support.annotation.*;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.*;
 import android.widget.*;
@@ -67,6 +69,13 @@ public class ListHabitsRootView extends BaseRootView
     @BindView(R.id.header)
     HeaderView header;
 
+    @BindView(R.id.drawer_layout)
+    DrawerLayout mDrawerLayout;
+
+    @OnClick(R.id.menu_icon)
+    public void onMenuIconClick(ImageView imageView) {
+        mDrawerLayout.openDrawer(GravityCompat.START);
+    }
     @NonNull
     private final HabitCardListAdapter listAdapter;
 
