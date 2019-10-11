@@ -22,6 +22,7 @@ package org.isoron.uhabits.activities.habits.list;
 import android.content.*;
 import android.content.res.*;
 import android.support.annotation.*;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
@@ -42,6 +43,8 @@ import org.isoron.uhabits.utils.*;
 import javax.inject.*;
 
 import butterknife.*;
+
+import static org.isoron.uhabits.activities.habits.list.ListHabitsScreen.REQUEST_SETTINGS;
 
 @ActivityScope
 public class ListHabitsRootView extends BaseRootView
@@ -72,9 +75,11 @@ public class ListHabitsRootView extends BaseRootView
 
     @BindView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
+    @BindView(R.id.nav_view)
+    NavigationView navigationView;
 
-    @OnClick(R.id.menu_icon)
-    public void onMenuIconClick(ImageView imageView) {
+    @OnClick(R.id.menu_icon_layout)
+    public void onMenuIconClick(RelativeLayout relativeLayout) {
         mDrawerLayout.openDrawer(GravityCompat.START);
     }
 
@@ -88,14 +93,18 @@ public class ListHabitsRootView extends BaseRootView
     private final IntentFactory intentFactory;
     @NonNull
     private final BaseActivity activity;
+    @NonNull
+    private final ThemeSwitcher themeSwitcher;
 
     private final TaskRunner runner;
+
 
     @Inject
     public ListHabitsRootView(@ActivityContext Context context,
                               @NonNull HintListFactory hintListFactory,
                               @NonNull HabitCardListAdapter listAdapter,
                               @NonNull BaseActivity activity,
+                              @NonNull ThemeSwitcher themeSwitcher,
                               @NonNull IntentFactory intentFactory,
                               @NonNull TaskRunner runner)
     {
@@ -105,9 +114,49 @@ public class ListHabitsRootView extends BaseRootView
 
         this.activity = activity;
         this.intentFactory = intentFactory;
+        this.themeSwitcher = themeSwitcher;
         this.listAdapter = listAdapter;
         listView.setAdapter(listAdapter);
         listAdapter.setListView(listView);
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                // set item as selected to persist highlight
+                item.setChecked(true);
+                // close drawer when item is tapped
+                mDrawerLayout.closeDrawers();
+
+                // Add code here to update the UI based on the item selected
+                // For example, swap UI fragments here
+                switch (item.getItemId())
+                {
+                    case R.id.actionToggleNightMode:
+                        //toggleNightMode();
+                        return true;
+
+                    case R.id.actionAdd:
+                        showCreateHabitScreen();
+                        return true;
+
+                    case R.id.actionFAQ:
+                        showFAQScreen();
+                        return true;
+
+                    case R.id.actionAbout:
+                        showAboutScreen();
+                        return true;
+
+                    case R.id.actionSettings:
+                        showSettingsScreen();
+                        return true;
+
+                    default:
+                        return false;
+                }
+
+            }
+        });
 
         this.runner = runner;
         progressBar.setIndeterminate(true);
@@ -211,6 +260,31 @@ public class ListHabitsRootView extends BaseRootView
     {
         Intent intent = intentFactory.startTemplateHabitActivity(activity);
         activity.startActivity(intent);
+    }
+
+
+    public void showSettingsScreen()
+    {
+        Intent intent = intentFactory.startSettingsActivity(activity);
+        activity.startActivityForResult(intent, REQUEST_SETTINGS);
+    }
+
+    public void showFAQScreen()
+    {
+        Intent intent = intentFactory.viewFAQ(activity);
+        activity.startActivity(intent);
+    }
+
+    public void showAboutScreen()
+    {
+        Intent intent = intentFactory.startAboutActivity(activity);
+        activity.startActivity(intent);
+    }
+
+    public void toggleNightMode()
+    {
+        themeSwitcher.toggleNightMode();
+        activity.restartWithFade();
     }
 
     private void updateProgressBar()

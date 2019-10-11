@@ -37,6 +37,7 @@ android {
                 includeCompileClasspath true
             }
         }
+        vectorDrawables.useSupportLibrary = true
 //        playAccountConfig = playAccountConfigs.defaultAccountConfig
     }
 
