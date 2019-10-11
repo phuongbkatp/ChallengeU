@@ -34,6 +34,7 @@ import org.isoron.uhabits.activities.common.views.*;
 import org.isoron.uhabits.activities.habits.list.controllers.*;
 import org.isoron.uhabits.activities.habits.list.model.*;
 import org.isoron.uhabits.activities.habits.list.views.*;
+import org.isoron.uhabits.intents.IntentFactory;
 import org.isoron.uhabits.models.*;
 import org.isoron.uhabits.tasks.*;
 import org.isoron.uhabits.utils.*;
@@ -76,8 +77,17 @@ public class ListHabitsRootView extends BaseRootView
     public void onMenuIconClick(ImageView imageView) {
         mDrawerLayout.openDrawer(GravityCompat.START);
     }
+
+    @OnClick(R.id.actionAdd)
+    public void onActionAdd(ImageView imageView) {
+        showCreateHabitScreen();
+    }
     @NonNull
     private final HabitCardListAdapter listAdapter;
+    @NonNull
+    private final IntentFactory intentFactory;
+    @NonNull
+    private final BaseActivity activity;
 
     private final TaskRunner runner;
 
@@ -85,12 +95,16 @@ public class ListHabitsRootView extends BaseRootView
     public ListHabitsRootView(@ActivityContext Context context,
                               @NonNull HintListFactory hintListFactory,
                               @NonNull HabitCardListAdapter listAdapter,
+                              @NonNull BaseActivity activity,
+                              @NonNull IntentFactory intentFactory,
                               @NonNull TaskRunner runner)
     {
         super(context);
         addView(inflate(getContext(), R.layout.list_habits, null));
         ButterKnife.bind(this);
 
+        this.activity = activity;
+        this.intentFactory = intentFactory;
         this.listAdapter = listAdapter;
         listView.setAdapter(listAdapter);
         listAdapter.setListView(listView);
@@ -191,6 +205,12 @@ public class ListHabitsRootView extends BaseRootView
     {
         llEmpty.setVisibility(
             listAdapter.getItemCount() > 0 ? View.GONE : View.VISIBLE);
+    }
+
+    public void showCreateHabitScreen()
+    {
+        Intent intent = intentFactory.startTemplateHabitActivity(activity);
+        activity.startActivity(intent);
     }
 
     private void updateProgressBar()

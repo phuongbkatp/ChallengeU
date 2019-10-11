@@ -32,11 +32,22 @@
                 android:layout_toRightOf="@id/menu_icon"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
+                android:textSize="20sp"
+                android:fontFamily="@font/linotte_bold"
+                android:textStyle="bold"
                 android:text="@string/main_activity_title"
-                android:textColor="@color/black"
-                android:textSize="@dimen/titleTextSize">
+                android:textColor="@color/black">
 
             </TextView>
+
+            <ImageView
+                android:id="@+id/actionAdd"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_action_add_light"/>
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
