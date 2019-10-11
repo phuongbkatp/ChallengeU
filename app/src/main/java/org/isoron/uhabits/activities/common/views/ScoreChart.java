@@ -407,7 +407,7 @@ public class ScoreChart extends ScrollableChart
         primaryColor = Color.BLACK;
         textColor = res.getColor(R.attr.mediumContrastTextColor);
         gridColor = res.getColor(R.attr.lowContrastTextColor);
-        backgroundColor = res.getColor(R.attr.cardBackgroundColor);
+        backgroundColor = res.getColor(R.attr.cardBackColor);
     }
 
     private void initDateFormats()

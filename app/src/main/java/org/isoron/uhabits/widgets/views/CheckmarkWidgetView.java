@@ -82,7 +82,7 @@ public class CheckmarkWidgetView extends HabitWidgetView
 
             case Checkmark.CHECKED_IMPLICITLY:
                 text = getResources().getString(R.string.fa_check);
-                bgColor = res.getColor(R.attr.cardBackgroundColor);
+                bgColor = res.getColor(R.attr.cardBackColor);
                 fgColor = res.getColor(R.attr.mediumContrastTextColor);
 
                 setShadowAlpha(0x00);
@@ -93,7 +93,7 @@ public class CheckmarkWidgetView extends HabitWidgetView
             case Checkmark.UNCHECKED:
             default:
                 text = getResources().getString(R.string.fa_times);
-                bgColor = res.getColor(R.attr.cardBackgroundColor);
+                bgColor = res.getColor(R.attr.cardBackColor);
                 fgColor = res.getColor(R.attr.mediumContrastTextColor);
 
                 setShadowAlpha(0x00);

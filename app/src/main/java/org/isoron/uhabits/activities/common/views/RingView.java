@@ -237,7 +237,7 @@ public class RingView extends View
         StyledResources res = new StyledResources(getContext());
 
         if (backgroundColor == null)
-            backgroundColor = res.getColor(R.attr.cardBackgroundColor);
+            backgroundColor = res.getColor(R.attr.cardBackColor);
 
         if (inactiveColor == null)
             inactiveColor = res.getColor(R.attr.highContrastTextColor);

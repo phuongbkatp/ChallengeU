@@ -31,9 +31,9 @@
         <item name="cardBackground">@drawable/card_light_background</item>
 
         <item name="colorPrimary">@color/circle_background</item>
-        <item name="colorPrimaryDark">@color/circle_background</item>
+        <item name="colorPrimaryDark">@color/white</item>
         <item name="colorAccent">?aboutScreenColor</item>
-        <item name="cardBackgroundColor">@color/grey_50</item>
+        <item name="cardBackColor">@color/grey_50</item>
         <item name="windowBackgroundColor">@color/circle_background</item>
         <item name="headerBackgroundColor">@color/circle_background</item>
         <item name="highlightedBackgroundColor">@color/grey_100</item>
@@ -88,7 +88,7 @@
         <item name="colorPrimary">@color/grey_950</item>
         <item name="colorPrimaryDark">@color/black</item>
         <item name="colorAccent">?aboutScreenColor</item>
-        <item name="cardBackgroundColor">@color/grey_850</item>
+        <item name="cardBackColor">@color/grey_850</item>
         <item name="windowBackgroundColor">@color/grey_900</item>
         <item name="headerBackgroundColor">@color/grey_900</item>
         <item name="highlightedBackgroundColor">@color/grey_800</item>
@@ -130,7 +130,7 @@
 
         <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryDark">@color/black</item>
-        <item name="cardBackgroundColor">@color/black</item>
+        <item name="cardBackColor">@color/black</item>
         <item name="windowBackgroundColor">@color/black</item>
         <item name="headerBackgroundColor">@color/black</item>
         <item name="highlightedBackgroundColor">@color/black</item>
@@ -140,7 +140,7 @@
     </style>
 
     <style name="TransparentWidgetTheme" parent="AppBaseThemeDark">
-        <item name="cardBackgroundColor">@color/black</item>
+        <item name="cardBackColor">@color/black</item>
 
         <item name="highContrastTextColor">@color/white</item>
         <item name="mediumContrastTextColor">@color/white_aa</item>
@@ -192,7 +192,7 @@
     </style>
 
     <style name="Card" parent="CardCommon">
-        <item name="android:layout_marginBottom">1dp</item>
+        <item name="android:layout_margin">5dp</item>
     </style>
 
     <style name="CardHeader">

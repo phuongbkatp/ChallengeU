@@ -42,12 +42,12 @@
 
             <ImageView
                 android:id="@+id/actionAdd"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/ic_action_add_light"/>
+                android:background="@drawable/ic_add"/>
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
@@ -55,6 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar"
+        android:layout_marginBottom="5dp"
         android:id="@+id/header"
         style="@style/ListHabits.Header"/>
 
@@ -64,6 +65,8 @@
         android:layout_height="match_parent"
         android:background="?windowBackgroundColor"
         android:divider="?windowBackgroundColor"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:dividerHeight="1dp"
         android:listSelector="@android:color/transparent"
         android:layout_below="@id/header"/>

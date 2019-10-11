@@ -65,7 +65,7 @@
     </array>
 
     <!-- Time and Date picker -->
-    <color name="circle_background">#e6e6e6</color>
+    <color name="circle_background">#eeeeee</color>
     <color name="line_background">#cccccc</color>
     <color name="ampm_text_color">#8c8c8c</color>
     <color name="done_text_color_normal">#000000</color>
