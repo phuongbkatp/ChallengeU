@@ -5,66 +5,83 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<RelativeLayout
+<android.support.design.widget.CoordinatorLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="?windowBackgroundColor">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        style="@style/Toolbar"
-        app:popupTheme="?toolbarPopupTheme"
-        android:layout_alignParentTop="true">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <RelativeLayout
-                android:id="@+id/menu_icon_layout"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true">
-
-                <ImageView
-                    android:id="@+id/menu_icon"
-                    android:layout_width="18dp"
-                    android:layout_height="25dp"
-                    android:layout_centerInParent="true"
-                    android:background="@drawable/ic_menu" />
-            </RelativeLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/menu_icon_layout"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:textSize="20sp"
-                android:fontFamily="@font/linotte_bold"
-                android:textStyle="bold"
-                android:text="@string/main_activity_title"
-                android:textColor="@color/black">
-
-            </TextView>
-
-            <ImageView
-                android:id="@+id/actionAdd"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/ic_add"/>
-        </RelativeLayout>
-    </android.support.v7.widget.Toolbar>
-
-    <org.isoron.uhabits.activities.habits.list.views.HeaderView
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        android:layout_marginBottom="5dp"
-        android:id="@+id/header"
-        style="@style/ListHabits.Header"/>
+        app:elevation="0dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?colorPrimary"
+            app:layout_scrollFlags="scroll">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@style/Toolbar"
+                app:popupTheme="?toolbarPopupTheme"
+                android:layout_alignParentTop="true">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <RelativeLayout
+                        android:id="@+id/menu_icon_layout"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:id="@+id/menu_icon"
+                            android:layout_width="18dp"
+                            android:layout_height="25dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/ic_menu" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/menu_icon_layout"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/linotte_bold"
+                        android:textStyle="bold"
+                        android:text="@string/main_activity_title"
+                        android:textColor="@color/black">
+
+                    </TextView>
+
+                    <ImageView
+                        android:id="@+id/actionAdd"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/ic_add"/>
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <org.isoron.uhabits.activities.habits.list.views.HeaderView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/header"
+            style="@style/ListHabits.Header"/>
+
+    </android.support.design.widget.AppBarLayout>
+
 
     <org.isoron.uhabits.activities.habits.list.views.HabitCardListView
         android:id="@+id/listView"
@@ -74,6 +91,7 @@
         android:divider="?windowBackgroundColor"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:dividerHeight="1dp"
         android:listSelector="@android:color/transparent"
         android:layout_below="@id/header"/>
@@ -124,7 +142,7 @@
         android:layout_below="@id/header"
         style="@style/ToolbarShadow"/>
 
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
