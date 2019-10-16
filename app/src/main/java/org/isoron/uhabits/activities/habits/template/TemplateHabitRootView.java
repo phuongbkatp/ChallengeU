@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.Toolbar;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import org.isoron.uhabits.R;
 import org.isoron.uhabits.activities.ActivityContext;
@@ -30,6 +31,10 @@ public class TemplateHabitRootView extends BaseRootView {
     @NonNull
     private final BaseActivity activity;
 
+    @OnClick(R.id.icon_back)
+    public void onBackBtnPress(RelativeLayout relativeLayout) {
+        activity.finish();
+    }
     @OnClick(R.id.your_own_challenge)
     public void onYourOwnChallenge(LinearLayout linearLayout) {
         showCreateSimpleHabitScreen();

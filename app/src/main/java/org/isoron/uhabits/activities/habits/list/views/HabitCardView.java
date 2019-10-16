@@ -179,7 +179,7 @@ public class HabitCardView extends FrameLayout
     private int getActiveColor(Habit habit)
     {
         int mediumContrastColor = res.getColor(R.attr.mediumContrastTextColor);
-        int activeColor = ColorUtils.getColor(context, habit.getColor());
+        int activeColor = ColorUtils.getColorListHabit(context, habit.getColor());
         if (habit.isArchived()) activeColor = mediumContrastColor;
 
         return activeColor;

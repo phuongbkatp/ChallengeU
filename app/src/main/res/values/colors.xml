@@ -50,11 +50,11 @@
     <color name="colorTextAction">#37474F</color>
 
     <array name="lightPalette">
-        <item>@color/red_700</item>
-        <item>@color/deep_orange_700</item>
-        <item>@color/yellow_800</item>
-        <item>@color/lime_700</item>
-        <item>@color/green_700</item>
+        <item>@color/red_600</item>
+        <item>@color/deep_orange_600</item>
+        <item>@color/yellow_600</item>
+        <item>@color/lime_600</item>
+        <item>@color/green_600</item>
         <item>@color/teal_600</item>
         <item>@color/cyan_600</item>
         <item>@color/light_blue_600</item>

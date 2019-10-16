@@ -23,6 +23,8 @@ import android.content.*;
 import android.graphics.*;
 import android.util.*;
 
+import org.isoron.uhabits.R;
+
 public abstract class ColorUtils
 {
     public static String CSV_PALETTE[] = {
@@ -85,6 +87,33 @@ public abstract class ColorUtils
             Log.w("ColorHelper",
                 String.format("Invalid color: %d. Returning default.",
                     paletteColor));
+            paletteColor = 0;
+        }
+
+        return palette[paletteColor];
+    }
+
+    public static int getColorToolbar(Context context, int paletteColor)
+    {
+        if (context == null)
+            throw new IllegalArgumentException("Context is null");
+
+        StyledResources res = new StyledResources(context);
+        int palette = res.getStyleResource(R.attr.colorPrimaryDark);
+
+        int color = context.getResources().getInteger(palette);
+        return color;
+    }
+
+    public static int getColorListHabit(Context context, int paletteColor)
+    {
+        StyledResources res = new StyledResources(context);
+        int palette[] = res.getPalette();
+        if (paletteColor < 0 || paletteColor >= palette.length)
+        {
+            Log.w("ColorHelper",
+                    String.format("Invalid color: %d. Returning default.",
+                            paletteColor));
             paletteColor = 0;
         }
 

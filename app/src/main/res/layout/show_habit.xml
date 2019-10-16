@@ -27,8 +27,8 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        style="@style/Toolbar"
-        app:popupTheme="?toolbarPopupTheme"
+        android:layout_height="?actionBarSize"
+        android:layout_width="match_parent"
         android:layout_alignParentTop="true"/>
 
     <!-- Separate file so that we can use the layout editor to preview it -->

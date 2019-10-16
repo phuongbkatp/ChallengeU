@@ -82,7 +82,7 @@ public class HeaderView extends ScrollableChart
         paint.setTextSize(getResources().getDimension(R.dimen.tinyTextSize));
         paint.setTextAlign(Paint.Align.CENTER);
         paint.setTypeface(Typeface.DEFAULT_BOLD);
-        paint.setColor(sr.getColor(R.attr.mediumContrastTextColor));
+        paint.setColor(sr.getColor(R.attr.headerTextColor));
 
         rect = new RectF();
     }
